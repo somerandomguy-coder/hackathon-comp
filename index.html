@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic 3-Component Starter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Basic UI Starter</h1>
+
+    <section class="component" data-component="button">
+      <h2>1. Button Component</h2>
+      <button id="actionButton" class="btn">Click Me</button>
+      <p id="buttonStatus" class="status">Not clicked yet</p>
+    </section>
+
+    <section class="component" data-component="card">
+      <h2>2. Card Component</h2>
+      <article class="card">
+        <h3>Simple Card</h3>
+        <p>This is a basic card for layout and style testing.</p>
+      </article>
+    </section>
+
+    <section class="component" data-component="form">
+      <h2>3. Form Component</h2>
+      <form id="nameForm">
+        <label for="nameInput">Your Name</label>
+        <input id="nameInput" type="text" placeholder="Type your name" />
+        <button type="submit" class="btn">Submit</button>
+      </form>
+      <p id="formOutput" class="status">No input submitted yet</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

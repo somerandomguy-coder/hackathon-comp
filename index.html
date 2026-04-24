@@ -3,38 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basic 3-Component Starter</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Gossip Style Screen</title>
+  <style>
+    @font-face {
+      font-family: "ZTBrosOskon90s";
+      src: url("./fonts/ZTBrosOskon90s-Regular-CROKvpw6.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "BibliophileScript";
+      src: url("./fonts/BibliophileScript-Regular-D8DTnNEq.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    :root {
+      --bg: #000751;
+      --white: #f6f7ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #0f0f0f;
+      font-family: "ZTBrosOskon90s", Georgia, serif;
+    }
+
+    .frame {
+      position: relative;
+      width: 1280px;
+      height: 952px;
+      overflow: hidden;
+    }
+
+    .copy {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1280px;
+      height: 952px;
+      background: var(--bg);
+      color: var(--white);
+      text-align: left;
+    }
+
+    .line-main {
+      position: absolute;
+      margin: 0;
+      width: 1800px;
+      height: 201px;
+      top: 208px;
+      left: 54px;
+      font-family: "ZTBrosOskon90s", Georgia, serif;
+      font-size: 150px;
+      line-height: 231px;
+      letter-spacing: 0.5px;
+      font-weight: 400;
+    }
+
+    .line-script {
+      font-family: "BibliophileScript", "Times New Roman", serif;
+      font-style: normal;
+      font-size: 200px;
+      line-height: 108px;
+      font-weight: 400;
+    }
+
+    .line-mixed {
+      position: absolute;
+      margin: 0;
+      top: 430px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: inline-flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+    }
+
+    .line-sub-inline {
+      font-family: "ZTBrosOskon90s", Georgia, serif;
+      font-style: normal;
+      font-size: 96px;
+      line-height: 108px;
+      letter-spacing: 0.4px;
+      font-weight: 400;
+    }
+
+    .letter-img {
+      position: absolute;
+      top: 588px;
+      left: 880px;
+      width: 225.15px;
+      height: 180.64px;
+      transform: rotate(11.57deg);
+      object-fit: cover;
+      object-position: center;
+      border-radius: 7px;
+      box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.25);
+    }
+  </style>
 </head>
 <body>
-  <main class="container">
-    <h1>Basic UI Starter</h1>
+  <div class="frame">
+    <div class="copy">
+      <p class="line-main">hey upper east siders...</p>
+      <p class="line-mixed line-script">gossip girl here <span class="line-sub-inline">- and i have<br />the biggest news ever</span></p>
+    </div>
 
-    <section class="component" data-component="button">
-      <h2>1. Button Component</h2>
-      <button id="actionButton" class="btn">Click Me</button>
-      <p id="buttonStatus" class="status">Not clicked yet</p>
-    </section>
-
-    <section class="component" data-component="card">
-      <h2>2. Card Component</h2>
-      <article class="card">
-        <h3>Simple Card</h3>
-        <p>This is a basic card for layout and style testing.</p>
-      </article>
-    </section>
-
-    <section class="component" data-component="form">
-      <h2>3. Form Component</h2>
-      <form id="nameForm">
-        <label for="nameInput">Your Name</label>
-        <input id="nameInput" type="text" placeholder="Type your name" />
-        <button type="submit" class="btn">Submit</button>
-      </form>
-      <p id="formOutput" class="status">No input submitted yet</p>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
+    <img class="letter-img" src="./-3S.png" alt="Letter" />
+  </div>
 </body>
 </html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frame 2 Recreation</title>
+  <style>
+    @font-face {
+      font-family: "ZTBrosOskon90s";
+      src: url("./fonts/ZTBrosOskon90s-Regular-CROKvpw6.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "BibliophileScript";
+      src: url("./fonts/BibliophileScript-Regular-D8DTnNEq.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #fffcf6;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: "ZTBrosOskon90s", serif;
+    }
+
+    .frame {
+      position: relative;
+      width: 1280px;
+      height: 2576px;
+      margin: 0 auto;
+      background: #fffcf6;
+      overflow: hidden;
+    }
+
+    .nav {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 56px;
+      z-index: 3;
+    }
+
+    .nav-btn {
+      width: 230px;
+      height: 54px;
+      border-radius: 28px;
+      border: 1.5px solid #121212;
+      background: #bec2e5;
+      color: #131313;
+      font: 400 54px/1 "ZTBrosOskon90s", serif;
+      text-align: left;
+      padding: 6px 0 0 24px;
+    }
+
+    .nav-btn.center {
+      text-align: center;
+      padding-left: 0;
+    }
+
+    .nav-btn.right {
+      text-align: right;
+      padding-right: 20px;
+      padding-left: 0;
+    }
+
+    .xoxo {
+      position: absolute;
+      top: 168px;
+      left: 14px;
+      margin: 0;
+      color: #1026f9;
+      font: 400 310px/0.92 "ZTBrosOskon90s", serif;
+      letter-spacing: 4px;
+      z-index: 1;
+    }
+
+    .watermark {
+      position: absolute;
+      top: 380px;
+      right: -78px;
+      margin: 0;
+      color: #b3b5f6;
+      opacity: 0.72;
+      font: 400 245px/0.95 "BibliophileScript", cursive;
+      transform: rotate(-9deg);
+      z-index: 0;
+    }
+
+    .envelope {
+      position: absolute;
+      width: 310px;
+      filter: drop-shadow(0 6px 5px rgba(0, 0, 0, 0.22));
+      z-index: 2;
+    }
+
+    .env-1 { top: 375px; left: 488px; transform: rotate(12deg); width: 258px; }
+    .env-2 { top: 988px; left: 70px; transform: rotate(-8deg); width: 290px; }
+    .env-3 { top: 980px; right: 62px; transform: rotate(-11deg); width: 286px; }
+    .env-4 { top: 1360px; left: 72px; transform: rotate(9deg); width: 292px; }
+    .env-5 { top: 1638px; left: 560px; transform: rotate(-12deg); width: 292px; }
+    .env-6 { top: 1718px; left: 778px; transform: rotate(9deg); width: 300px; }
+    .env-7 { top: 2184px; left: 320px; transform: rotate(9deg); width: 288px; }
+
+    .note {
+      position: absolute;
+      width: 184px;
+      height: 238px;
+      background: #e6e0cf;
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.16);
+      z-index: 3;
+    }
+
+    .note-1 {
+      top: 956px;
+      left: 290px;
+      transform: rotate(-3deg);
+    }
+
+    .note-2 {
+      top: 1500px;
+      left: 804px;
+      transform: rotate(-5deg);
+    }
+
+    .eyes {
+      position: absolute;
+      top: 1290px;
+      left: 562px;
+      display: flex;
+      gap: 18px;
+      z-index: 3;
+    }
+
+    .eye {
+      width: 118px;
+      height: 112px;
+      border-radius: 50%;
+      border: 1.5px solid #161616;
+      background: #f3f3f3;
+      position: relative;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+    }
+
+    .pupil {
+      position: absolute;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #000;
+      top: 34px;
+      left: 20px;
+    }
+
+    .highlight {
+      position: absolute;
+      width: 18px;
+      height: 29px;
+      border-radius: 45%;
+      background: #fff;
+      bottom: 8px;
+      left: 10px;
+      transform: rotate(-30deg);
+    }
+
+    .ticker {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 18px;
+      height: 58px;
+      background: #000a75;
+      z-index: 4;
+      overflow: hidden;
+    }
+
+    .ticker p {
+      margin: 0;
+      white-space: nowrap;
+      color: #f6f7ff;
+      font: 400 68px/1 "BibliophileScript", cursive;
+      transform: translateY(-14px);
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <main class="frame">
+    <nav class="nav" aria-label="Main">
+      <button class="nav-btn">home</button>
+      <button class="nav-btn center">tea</button>
+      <button class="nav-btn right">about</button>
+    </nav>
+
+    <p class="xoxo">XOXO</p>
+    <p class="watermark">gossip girl</p>
+
+    <img class="envelope env-1" src="./-3S.png" alt="Envelope" />
+    <img class="envelope env-2" src="./-3S.png" alt="Envelope" />
+    <img class="envelope env-3" src="./-3S.png" alt="Envelope" />
+    <img class="envelope env-4" src="./-3S.png" alt="Envelope" />
+    <img class="envelope env-5" src="./-3S.png" alt="Envelope" />
+    <img class="envelope env-6" src="./-3S.png" alt="Envelope" />
+    <img class="envelope env-7" src="./-3S.png" alt="Envelope" />
+
+    <div class="note note-1" aria-hidden="true"></div>
+    <div class="note note-2" aria-hidden="true"></div>
+
+    <div class="eyes" aria-hidden="true">
+      <div class="eye">
+        <div class="pupil">
+          <div class="highlight"></div>
+        </div>
+      </div>
+      <div class="eye">
+        <div class="pupil">
+          <div class="highlight"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="ticker" aria-label="Ticker">
+      <p>....xoxo gossip girl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;you know you love me ....xoxo gossip girl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;you know you love me ....xoxo gossip girl</p>
+    </footer>
+  </main>
+</body>
+</html>

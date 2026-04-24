@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frame 3 Recreation</title>
+  <style>
+    @font-face {
+      font-family: "ZTBrosOskon90s";
+      src: url("./fonts/ZTBrosOskon90s-Regular-CROKvpw6.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "NokiaFC22";
+      src: url("./fonts/nokiafc22.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #ececeb;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: "ZTBrosOskon90s", serif;
+    }
+
+    .frame {
+      position: relative;
+      width: 1280px;
+      height: 952px;
+      margin: 0 auto;
+      background: #ececeb;
+      overflow: hidden;
+    }
+
+    .nav {
+      position: absolute;
+      top: 24px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 64px;
+      z-index: 4;
+    }
+
+    .nav-btn {
+      width: 230px;
+      height: 54px;
+      border-radius: 28px;
+      border: 1.5px solid #121212;
+      background: #bec2e5;
+      color: #131313;
+      font: 400 54px/1 "ZTBrosOskon90s", serif;
+      text-align: left;
+      padding: 6px 0 0 24px;
+    }
+
+    .nav-btn.center {
+      text-align: center;
+      padding-left: 0;
+    }
+
+    .nav-btn.right {
+      text-align: right;
+      padding-right: 20px;
+      padding-left: 0;
+    }
+
+    .phone-wrap {
+      position: absolute;
+      top: 304px;
+      left: 388px;
+      width: 519px;
+      height: 1005px;
+      z-index: 2;
+    }
+
+    .phone-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .screen {
+      position: absolute;
+      top: 211px;
+      left: 85px;
+      width: 350px;
+      height: 376px;
+      border: 8px solid #000;
+      border-radius: 8px;
+      background: radial-gradient(circle at 25% 30%, #b6d0f2 0%, #a6c4ea 55%, #98b7df 100%);
+      color: #000;
+      font-family: "NokiaFC22", monospace;
+      z-index: 3;
+    }
+
+    .signal {
+      position: absolute;
+      top: 11px;
+      left: 15px;
+      display: flex;
+      gap: 3px;
+      align-items: flex-end;
+      height: 21px;
+    }
+
+    .signal span {
+      display: block;
+      width: 6px;
+      background: #000;
+    }
+
+    .signal span:nth-child(1) { height: 9px; }
+    .signal span:nth-child(2) { height: 13px; }
+    .signal span:nth-child(3) { height: 18px; }
+
+    .time {
+      position: absolute;
+      top: 7px;
+      right: 12px;
+      font-size: 23px;
+      line-height: 1;
+    }
+
+    .message {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      top: 57px;
+      margin: 0;
+      font-family: "NokiaFC22", monospace;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 32px;
+      line-height: 1;
+      letter-spacing: -0.32px;
+      color: #000;
+    }
+
+    .softkey-left,
+    .softkey-right {
+      position: absolute;
+      bottom: 11px;
+      font-size: 43px;
+      line-height: 1;
+    }
+
+    .softkey-left {
+      left: 15px;
+    }
+
+    .softkey-right {
+      right: 13px;
+    }
+  </style>
+</head>
+<body>
+  <main class="frame">
+    <nav class="nav" aria-label="Main">
+      <button class="nav-btn">home</button>
+      <button class="nav-btn center">tea</button>
+      <button class="nav-btn right">about</button>
+    </nav>
+
+    <section class="phone-wrap" aria-label="Phone">
+      <img src="./-5.jpg" alt="Nokia phone" />
+      <div class="screen">
+        <div class="signal" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="time">7:04</div>
+        <p class="message">and who am i?<br />that’s one<br />secret i’ll<br />never tell</p>
+        <div class="softkey-left">options</div>
+        <div class="softkey-right">send</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
